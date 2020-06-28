@@ -1,27 +1,24 @@
 import React, {Component} from 'react';
 import {View,
         Text,
-        Touchable,
-        StyleSheet,
+        StyleSheet, 
         TouchableOpacity} from 'react-native';
 
-import Logo from '../component/Logo'
-import FormLogin from '../component/FormLogin'
+import Logo from '../component/Logo';
+import FormSignUp from '../component/FormSignUp';
 
-export default class Login extends Component {
+export default class Signup extends Component{
     render(){
-        return (
+        return(
             <View style = {styles.container}>
                 <Logo/>
-                <FormLogin/>
-                <View style = {styles.signupTextContent}>
-                    <Text style = {styles.signupText}>
-                        Don't have an account yet? 
-                    </Text>
+                <FormSignUp/>
+                <View style = {styles.btnSingUpContent}>
+                    <Text style = {styles.signinText}>Already have an account?</Text>
                     <TouchableOpacity>
-                        <Text style = {styles.signupTextBtn}> Signup</Text>
+                        <Text style = {styles.singinTextBtn}> Sing in</Text>
                     </TouchableOpacity>
-                    </View>
+                </View>
             </View>
         )
     }
@@ -33,21 +30,20 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    signupTextContent:{
+    btnSingUpContent: {
         flexGrow: 1,
-        alignItems: 'flex-end',
         justifyContent: 'center',
+        alignItems: 'flex-end',
         flexDirection: 'row',
-        paddingVertical: 30
-
+        paddingVertical: 30,
     },
-    signupText: {
+    signinText: {
         color: '#004D40',
         fontSize: 18,
     },
-    signupTextBtn: {
+    singinTextBtn: {
         color: '#FFFFFF',
         fontSize: 19,
         fontWeight: '500'
-    }
+    },
 })
