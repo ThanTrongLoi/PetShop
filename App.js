@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {View,
-        StyleSheet,
-        TouchableOpacity} from 'react-native';
+        StyleSheet,} from 'react-native';
 
 import Login from './src/pages/Login';
 import Signup from './src/pages/Signup';
@@ -12,6 +11,7 @@ export default class App extends Component {
       <View style = {styles.container}>
         <Login/>
         {/* <Signup/> */}
+        {/* <LoginStack/> */}
       </View>
     )
   }

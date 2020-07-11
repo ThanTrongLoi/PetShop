@@ -1,31 +1,34 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {View,
         Text,
-        Touchable,
         StyleSheet,
-        TouchableOpacity} from 'react-native';
+        TouchableOpacity,
+        } from 'react-native';
 
-import Logo from '../component/Logo'
-import FormLogin from '../component/FormLogin'
+import Logo from '../component/Logo';
+import FormLogin from '../component/FormLogin';
 
-export default class Login extends Component {
-    render(){
-        return (
-            <View style = {styles.container}>
-                <Logo/>
-                <FormLogin/>
-                <View style = {styles.signupTextContent}>
-                    <Text style = {styles.signupText}>
-                        Don't have an account yet? 
-                    </Text>
-                    <TouchableOpacity>
-                        <Text style = {styles.signupTextBtn}> Signup</Text>
-                    </TouchableOpacity>
-                    </View>
-            </View>
-        )
-    }
+const Login = (props) => {
+    return (
+        <View style = {styles.container}>
+           <Logo/>
+           <FormLogin/>
+           <View style = {styles.signupTextContent}>
+               <Text style = {styles.signupText}>
+                   Don't have an account yet? 
+               </Text>
+               <TouchableOpacity 
+                    onPress = {()=>props.navigation.navigate('SignupScreen')}>
+                    <Text style = {styles.signupTextBtn}> Signup</Text>
+               </TouchableOpacity>
+                
+           </View> 
+       </View>
+   )
 }
+
+export default Login;
+
 
 const styles = StyleSheet.create({
     container: {
