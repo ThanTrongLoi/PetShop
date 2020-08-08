@@ -1,27 +1,44 @@
-import React, {Component} from 'react';
-import {View,
-        StyleSheet,} from 'react-native';
+import React from 'react';
+import {Button} from 'react-native'
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import Login from './src/pages/Login';
-import Signup from './src/pages/Signup';
+import SplashScreen from './src/screens/splashscreen'
+import LoginScreens from './src/screens/LoginScreen';
+import MainScreen from './src';
 
-export default class App extends Component {
-  render(){
-    return (
-      <View style = {styles.container}>
-        <Login/>
-        {/* <Signup/> */}
-        {/* <LoginStack/> */}
-      </View>
-    )
-  }
+
+
+const Stack = createStackNavigator();
+console.disableYellowBox = true
+export default function App(){
+  return(
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName = {'SplashScreen'} headerMode = 'none'>
+        <Stack.Screen name = 'SplashScreen' 
+                      component = {SplashScreen}
+                      // options = {{
+                      //   headerShown: false
+                      // }}
+        />
+        <Stack.Screen name = 'LoginScreens' 
+                      component = {LoginScreens}
+                      // options = {{
+                      //   headerShown: false
+                      // }}
+                      />
+        <Stack.Screen name = 'MainScreen' 
+                      component = {MainScreen}
+                      // options = {{
+                      //   title: 'main',
+                      //   headerTintColor: '#fff',
+                      //   headerStyle: {
+                      //     backgroundColor: '#4db6ac'
+                      //   }
+                      // }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#80cbc4',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-})
