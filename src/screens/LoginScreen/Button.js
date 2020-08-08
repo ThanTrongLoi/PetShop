@@ -6,8 +6,7 @@ import { DimensionApp } from '../../unit/dimensions'
 import LogoGoogle from '../../assets/images/googlelogo.png'
 import LogoFaceBook from '../../assets/images/facebooklogo.png'
 
-class ButtonLogin extends PureComponent {
-    render(){
+const ButtonLogin = () => {
         return (
             <View style = {styles.container}>
                 <View style = {{flex: 1}}>
@@ -67,7 +66,7 @@ class ButtonLogin extends PureComponent {
             </View>
         )
     }
-}
+
 
 export default ButtonLogin;
 
